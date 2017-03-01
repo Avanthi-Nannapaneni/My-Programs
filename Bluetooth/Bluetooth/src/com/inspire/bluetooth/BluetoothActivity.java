@@ -11,12 +11,13 @@ public class BluetoothActivity extends Activity {
 	 int s=1;
     @Override
    
-    public void onCreate(Bundle savedInstanceState) {
+	/** Activity is created and bluetooth adapter is called for action request **/
+    public void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
         if (adapter!= null){
-        	
+        	/** Check whether any bluetooth is nearby**/
         	if (!adapter.isEnabled()){
         		Intent i = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
         		startActivityForResult(i, s);

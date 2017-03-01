@@ -19,15 +19,15 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // Creating a media player for Application level of context
          mp=MediaPlayer.create(getApplicationContext(),R.raw.m);
 
-
+// Button creation for music player to start
         Button start=(Button)findViewById(R.id.button);
-
+// Button creation for music player to stop
         Button stop=(Button)findViewById(R.id.button2);
 
-
+// onclick listener for button start view
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,11 +37,11 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-
+// onclick listener for button stop view
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-mp.stop();
+mp.stop(); // Thread kills
             }
         });
     }
